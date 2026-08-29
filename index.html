@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generator Meme Sederhana 🖼️</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="main-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>🖼️ SIMPLE MEME MAKER</h1>
+            <p>Buat meme kocakmu sendiri dengan cepat dan mudah!</p>
+        </header>
+
+        <!-- Layout Grid: Form Control & Canvas Preview -->
+        <div class="meme-grid">
+            
+            <!-- Panel Kontrol Input -->
+            <div class="control-panel">
+                <h3>⚙️ Pengaturan Meme</h3>
+
+                <div class="form-group">
+                    <label for="image-source-select">Sumber Gambar:</label>
+                    <select id="image-source-select">
+                        <option value="sample">Gambar Template Sampel</option>
+                        <option value="url">Tautan URL Gambar</option>
+                        <option value="file">Unggah File Lokal</option>
+                    </select>
+                </div>
+
+                <!-- Input Berdasarkan Sumber -->
+                <div id="sample-input-group" class="form-group">
+                    <label for="sample-select">Pilih Template:</label>
+                    <select id="sample-select">
+                        <option value="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=600">Kucing Bingung 🐱</option>
+                        <option value="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=600">Anjing Lucu 🐶</option>
+                        <option value="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600">Pemandangan Santai 🏖️</option>
+                    </select>
+                </div>
+
+                <div id="url-input-group" class="form-group hidden">
+                    <label for="image-url">URL Gambar:</label>
+                    <input type="text" id="image-url" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div id="file-input-group" class="form-group hidden">
+                    <label for="image-file">Pilih File dari Perangkat:</label>
+                    <input type="file" id="image-file" accept="image/*">
+                </div>
+
+                <div class="form-group">
+                    <label for="top-text">Teks Atas:</label>
+                    <input type="text" id="top-text" placeholder="Ketik teks atas..." value="KETIKA KODINGAN">
+                </div>
+
+                <div class="form-group">
+                    <label for="bottom-text">Teks Bawah:</label>
+                    <input type="text" id="bottom-text" placeholder="Ketik teks bawah..." value="LANGSUNG RUNNING TANPA ERROR">
+                </div>
+
+                <div class="form-group-row">
+                    <div class="form-group">
+                        <label for="font-size">Ukuran Font:</label>
+                        <input type="number" id="font-size" value="40" min="10" max="100">
+                    </div>
+                    <div class="form-group">
+                        <label for="text-color">Warna Teks:</label>
+                        <input type="color" id="text-color" value="#ffffff">
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button id="btn-download" class="btn-pop btn-success">Unduh Meme 📥</button>
+                    <button id="btn-reset" class="btn-pop btn-danger">Reset 🔄</button>
+                </div>
+            </div>
+
+            <!-- Panel Preview Canvas -->
+            <div class="preview-panel">
+                <h3>👁️ Pratinjau Canvas</h3>
+                <div class="canvas-wrapper">
+                    <canvas id="meme-canvas"></canvas>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
